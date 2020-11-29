@@ -26,6 +26,7 @@
     "dependencies": {
         "autoprefixer": "^9.8.6",
         "postcss": "^7.0.35",
+        "sal.js": "^0.8.1",
         "scroll-out": "^2.2.12",
         "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1"
     }

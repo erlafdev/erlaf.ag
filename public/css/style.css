@@ -1,9 +1,25 @@
-[data-scroll] {
-    transition: opacity 1s;
-  }
-  [data-scroll="in"] {
-    opacity: 1;
-  }
-  [data-scroll="out"] {
-    opacity: 0;
+.hero-header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center top;
+    object-position: center top;
+    width: 100%;
+    height: 80%;
+    z-index: -1;
+}
+.bg-web-banner{
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('images/webbanner.png');
+    position: relative;
+}
+.h-80p{
+    height: 80%
 }
