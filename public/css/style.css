@@ -47,12 +47,21 @@
 .bg-designdemarque{
     background-color: #eaeeee;
 }
+.bg-orange{
+    background-color: #fa9134;
+}
 .text-64p{
     font-size: 36px;
+}
+.lh-60{
+    line-height: 30px
 }
 .designdemarque-size{
     height: 16rem;
     width: auto;
+}
+.h-687{
+    height: 400px
 }
 @media (min-width: 768px) {
 
@@ -62,6 +71,12 @@
     .designdemarque-size{
         height: 28rem;
         width: auto;
+    }
+    .lh-60{
+        line-height: 60px
+    }
+    .h-687{
+        height: 687px
     }
 }
 

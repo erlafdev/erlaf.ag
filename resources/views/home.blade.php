@@ -2,7 +2,7 @@
 @section('title', 'bienvenue | erlaf.ag')
 @section('content')
 
-<section style="height: 687px">
+<section class="h-687">
     <div class="h-full w-full">
         <img class="hero-header hidden md:inline xl:inline" srcset="{{ asset('imgs/webbanner.png') }}">
         <div class="flex container mx-auto md:py-20 py-20">
@@ -25,7 +25,7 @@
         </div>
         <div class="md:w-1/2 w-full md:p-36 p-8">
             <h1 class="gtfont font-normal text-64p">Développement Web</h1>
-            <p class="mt-8 md:text-3xl text-2xl gtfont font-light">
+            <p class="md:mt-8 mt-3 md:text-3xl text-2xl gtfont font-light">
                 D’une site vitrine à un site portfolio plus complexe, 
                 je vous accompagne dans la création de votre site internet. 
                 J’imagine des territoires visuels parfaitement adaptés à chaque support numérique.
@@ -40,7 +40,7 @@
     <div class="flex items-center flex-wrap-reverse w-full h-full">
         <div class="md:w-1/2 w-full md:p-36 p-8">
             <h1 class="gtfont font-normal text-64p">Design de marque</h1>
-            <p class="mt-8 md:text-3xl text-2xl gtfont font-light">
+            <p class="md:mt-8 mt-3 md:text-3xl text-2xl gtfont font-light">
                 De la création d’un logotype à la mise en forme d’une charte graphique complète, 
                 je vous accompagne dans l’élaboration de votre nouvelle identité visuelle grâce à une méthodologie précise qui a fait ses preuves.
             </p>
@@ -52,6 +52,21 @@
             <div class="flex justify-center items-center">
                 <img class="w-auto designdemarque-size" src="{{ asset('imgs/designdemarque.png') }}">
             </div>
+        </div>
+    </div>
+</section>
+<section class="h-auto pb-4 md:pb-0">
+    <div class="flex items-center flex-wrap w-full h-full">
+        <div class="md:w-1/2 w-full md:p-36 p-8 bg-orange">
+            <div class="flex justify-center items-center">
+                <img class="w-auto designdemarque-size" src="{{ asset('imgs/covermusicale.png') }}">
+            </div>
+        </div>
+        <div class="md:w-1/2 w-full md:p-36 p-8">
+            <h1 class="gtfont font-bold text-64p lh-60">Conception<br> de Cover <br> Musicale</h1>
+            <P class="mt-10">
+                <a href="#" class="py-4 px-16 bg-gray-900 text-white gtfont">en savoir plus</a>
+            </P>
         </div>
     </div>
 </section>
