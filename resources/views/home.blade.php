@@ -1,5 +1,5 @@
 @extends('layout.layout')
-@section('name', 'bienvenue | erlaf.ag')
+@section('title', 'bienvenue | erlaf.ag')
 @section('content')
     <nav class="bg-white shadow">
         <div class="container mx-auto px-6 py-8 md:flex md:justify-between md:items-center">
