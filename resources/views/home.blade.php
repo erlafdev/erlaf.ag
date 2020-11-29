@@ -2,9 +2,9 @@
 @section('title', 'bienvenue | erlaf.ag')
 @section('content')
 
-<header class="">
+<section style="height: 687px">
     <div class="h-full w-full">
-        <img class="hero-header hidden md:inline xl:inline" loading="eager" srcset="{{ asset('imgs/webbanner.png') }}, width="1800" height="911" alt="Abstract shapes colored green and gray">
+        <img class="hero-header hidden md:inline xl:inline" srcset="{{ asset('imgs/webbanner.png') }}">
         <div class="flex container mx-auto md:py-20 py-20">
             <div class="md:w-1/2 w-full px-10 md:px-20">
                 <h1 data-sal="slide-up" data-sal-repeat data-sal-once class="md:text-5xl text-4xl gtfont font-normal" style="--sal-duration: 0.5s; --sal-delay: 0.5s;">Bonjour ! Je suis <b>erlaf</b>, graphiste et dévéloppeur web freelance à bamako.</h1>
@@ -14,7 +14,47 @@
             </div>
         </div>
     </div>
-</header>
+</section>
+
+<section class="h-auto pb-4 md:pb-0">
+    <div class="flex items-center flex-wrap w-full h-full">
+        <div class="md:w-1/2 w-full md:p-36 p-8 bg-jaune">
+            <div class="flex justify-center items-center">
+                <img class="w-auto md:h-96 h-64" src="{{ asset('imgs/responsive-screen.png') }}">
+            </div>
+        </div>
+        <div class="md:w-1/2 w-full md:p-36 p-8">
+            <h1 class="gtfont font-normal text-64p">Développement Web</h1>
+            <p class="mt-8 md:text-3xl text-2xl gtfont font-light">
+                D’une site vitrine à un site portfolio plus complexe, 
+                je vous accompagne dans la création de votre site internet. 
+                J’imagine des territoires visuels parfaitement adaptés à chaque support numérique.
+            </p>
+            <P class="mt-10">
+                <a href="#" class="py-4 px-16 bg-gray-900 text-white gtfont">en savoir plus</a>
+            </P>
+        </div>
+    </div>
+</section>
+<section class="h-auto pb-4 md:pb-0">
+    <div class="flex items-center flex-wrap-reverse w-full h-full">
+        <div class="md:w-1/2 w-full md:p-36 p-8">
+            <h1 class="gtfont font-normal text-64p">Design de marque</h1>
+            <p class="mt-8 md:text-3xl text-2xl gtfont font-light">
+                De la création d’un logotype à la mise en forme d’une charte graphique complète, 
+                je vous accompagne dans l’élaboration de votre nouvelle identité visuelle grâce à une méthodologie précise qui a fait ses preuves.
+            </p>
+            <P class="mt-10">
+                <a href="#" class="py-4 px-16 bg-gray-900 text-white gtfont">en savoir plus</a>
+            </P>
+        </div>
+        <div class="md:w-1/2 w-full md:p-36 p-8 bg-designdemarque">
+            <div class="flex justify-center items-center">
+                <img class="w-auto designdemarque-size" src="{{ asset('imgs/designdemarque.png') }}">
+            </div>
+        </div>
+    </div>
+</section>
 
 @endsection
 
@@ -42,5 +82,15 @@
     </section>    
     
     
-    
+    <div class="py-10 px-10" style="width: 500px; height: 500px;background-color: #f9f9f9">
+            <h1 class="text-4xl gtfont font-semibold">Web developer</h1>
+            <p class="mt-8 text-2xl gtfont font-normal">
+                D’une site vitrine à un site portfolio plus complexe, 
+                je vous accompagne dans la création de votre site internet. 
+                J’imagine des territoires visuels parfaitement adaptés à chaque support numérique.
+            </p>
+            <P class="mt-10">
+                <a href="#" class="py-4 px-16 bg-gray-900 text-white gtfont">en savoir plus</a>
+            </P>
+        </div>
 --}}

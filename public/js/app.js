@@ -49744,7 +49744,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var sal = __webpack_require__(/*! sal.js */ "./node_modules/sal.js/dist/sal.js");
 
-sal();
+sal({
+  threshold: 1,
+  once: false
+});
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your

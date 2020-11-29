@@ -23,3 +23,46 @@
 .h-80p{
     height: 80%
 }
+
+.color-black{
+    color: #adadad;
+}
+
+.color-black:hover{
+    color: #0a0a0a;
+}
+
+.text-active{
+    color:#0a0a0a
+}
+
+.vh80{
+    height: 80vh;
+    width: 100%;
+}
+
+.bg-jaune{
+    background-color: #fca311;
+}
+.bg-designdemarque{
+    background-color: #eaeeee;
+}
+.text-64p{
+    font-size: 36px;
+}
+.designdemarque-size{
+    height: 16rem;
+    width: auto;
+}
+@media (min-width: 768px) {
+
+    .text-64p{
+        font-size: 64px;
+    }
+    .designdemarque-size{
+        height: 28rem;
+        width: auto;
+    }
+}
+
+

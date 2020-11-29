@@ -8,7 +8,7 @@ require('./bootstrap');
 var sal = require('sal.js')
 sal({
     threshold: 1,
-    once: true,
+    once: false,
   });
 
 window.Vue = require('vue');
