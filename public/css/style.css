@@ -35,12 +35,28 @@
 .text-active{
     color:#0a0a0a
 }
-
+.text-footer{
+    color: #697270
+}
+.text-footer:hover{
+    color: #fff
+}
+.bg-f9{
+    background-color: #ede4ddce
+}
+.bg-bleu{
+    background-color: #0129eb
+}
+.text-gris{
+    color: #8f8b89
+}
 .vh80{
     height: 80vh;
     width: 100%;
 }
-
+.bg-dark{
+    background-color: #0a0a0a;
+}
 .bg-jaune{
     background-color: #fca311;
 }
@@ -50,7 +66,15 @@
 .bg-orange{
     background-color: #fa9134;
 }
+.bg-langue{
+    background: url(images/langue.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .text-64p{
+    font-size: 36px;
+}
+.text-54p{
     font-size: 36px;
 }
 .lh-60{
@@ -63,10 +87,17 @@
 .h-687{
     height: 400px
 }
+.webtemplate{
+    width: 400px;
+    height: auto
+}
 @media (min-width: 768px) {
 
     .text-64p{
         font-size: 64px;
+    }
+    .text-54p{
+        font-size: 48px;
     }
     .designdemarque-size{
         height: 28rem;
@@ -77,6 +108,10 @@
     }
     .h-687{
         height: 687px
+    }
+    .webtemplate{
+        width: 700px;
+        height: auto
     }
 }
 

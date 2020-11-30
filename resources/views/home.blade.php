@@ -50,7 +50,7 @@
         </div>
         <div class="md:w-1/2 w-full md:p-36 p-8 bg-designdemarque">
             <div class="flex justify-center items-center">
-                <img class="w-auto designdemarque-size" src="{{ asset('imgs/designdemarque.png') }}">
+                <img class="w-auto designdemarque-size" src="{{ asset('imgs/carte-erlafdev.png') }}">
             </div>
         </div>
     </div>
