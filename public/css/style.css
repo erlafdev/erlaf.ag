@@ -31,7 +31,12 @@
 .color-black:hover{
     color: #0a0a0a;
 }
-
+.color-dvrk{
+    color: #0e1010;
+}
+.color-bleu{
+    color: #0057FF
+}
 .text-active{
     color:#0a0a0a
 }
@@ -45,7 +50,10 @@
     background-color: #ede4ddce
 }
 .bg-bleu{
-    background-color: #0129eb
+    background-color: #0057FF
+}
+.bg-bleu:hover{
+    background-color: #0e4fd1
 }
 .text-gris{
     color: #8f8b89
@@ -73,6 +81,7 @@
 }
 .text-64p{
     font-size: 36px;
+    line-height: 30px;
 }
 .text-54p{
     font-size: 36px;
@@ -81,8 +90,8 @@
     line-height: 30px
 }
 .designdemarque-size{
-    height: 16rem;
-    width: auto;
+    height: auto;
+    width:16rem ;
 }
 .h-687{
     height: 400px
@@ -94,14 +103,15 @@
 @media (min-width: 768px) {
 
     .text-64p{
-        font-size: 64px;
+        font-size: 60px;
+        line-height: 52px;
     }
     .text-54p{
         font-size: 48px;
     }
     .designdemarque-size{
-        height: 28rem;
-        width: auto;
+        height: auto;
+        width:28rem ;
     }
     .lh-60{
         line-height: 60px
