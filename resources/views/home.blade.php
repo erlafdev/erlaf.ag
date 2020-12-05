@@ -15,7 +15,7 @@
         </div>
     </div>|
 </section> --}}
-<header class="bg-white bg-cover md:py-40 py-28 md:px-20 flex items-center justify-center" style="background-image: url({{ asset('imgs/webbann.png') }}">
+<header class="bg-white bg-cover md:py-40 py-28 md:px-20 flex items-center justify-center" style="background-image: url({{ asset('imgs/gradient.jpg') }}">
     <div class="md:flex items-center justify-center">
         <div class="flex items-center justify-center px-6 w-full md:w-1/2">
             <div class="max-w-7xl text-center">

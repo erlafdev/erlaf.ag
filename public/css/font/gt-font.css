@@ -386,3 +386,7 @@
 .gtfont{
     font-family: 'GT Walsheim Pro'!important;
 }
+
+.gtfont-500{
+    font-weight: 500!important;
+}

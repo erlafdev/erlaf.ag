@@ -1,0 +1,413 @@
+
+/* -------------------------------- 
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+.cd-container {
+    /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+    width: 90%;
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  .cd-container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* -------------------------------- 
+  
+  Main components 
+  
+  -------------------------------- */
+
+  .cd-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(2, 23, 37, 0.95);
+    height: 50px;
+    width: 100%;
+    z-index: 3;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @media only screen and (min-width: 768px) {
+    .cd-header {
+      height: 80px;
+      background: transparent;
+      box-shadow: none;
+    }
+  }
+  @media only screen and (min-width: 1170px) {
+    .cd-header {
+      -webkit-transition: background-color 0.3s;
+      -moz-transition: background-color 0.3s;
+      transition: background-color 0.3s;
+      /* Force Hardware Acceleration in WebKit */
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      -ms-transform: translate3d(0, 0, 0);
+      -o-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    .cd-header.is-fixed {
+      /* when the user scrolls down, we hide the header right above the viewport */
+      position: fixed;
+      top: -80px;
+      background-color: rgba(2, 23, 37, 0.96);
+      -webkit-transition: -webkit-transform 0.3s;
+      -moz-transition: -moz-transform 0.3s;
+      transition: transform 0.3s;
+    }
+    .cd-header.is-visible {
+      /* if the user changes the scrolling direction, we show the header */
+      -webkit-transform: translate3d(0, 100%, 0);
+      -moz-transform: translate3d(0, 100%, 0);
+      -ms-transform: translate3d(0, 100%, 0);
+      -o-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+    .cd-header.menu-is-open {
+      /* add a background color to the header when the navigation is open */
+      background-color: rgba(2, 23, 37, 0.96);
+    }
+  }
+  
+  .cd-logo {
+    display: block;
+    position: absolute;
+    top: 50%;
+    bottom: auto;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: .875em;
+      box-shadow: 0 5px 12px rgba(#000, 0.5), 0 0 20px rgba(red, 0.55);
+  }
+  .cd-logo img {
+    display: block;
+  }
+  @media only screen and (min-width: 768px) {
+    .cd-logo {
+      left: 2.6em;
+    }
+  }
+  
+  .cd-secondary-nav {
+    position: absolute;
+    top: 50%;
+    bottom: auto;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 10em;
+    /* hidden on small devices */
+    display: none;
+  }
+  .cd-secondary-nav li {
+    display: inline-block;
+    margin-left: 2.2em;
+  }
+  .cd-secondary-nav a {
+    display: inline-block;
+    color: white;
+    // text-transform: uppercase;
+    font-weight: 700;
+  }
+  @media only screen and (min-width: 768px) {
+    .cd-secondary-nav {
+      display: block;
+    }
+  }
+  
+  .cd-primary-nav-trigger {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    background-color:none;
+  }
+  .cd-primary-nav-trigger .cd-menu-text {
+    color: white;
+    // text-transform: uppercase;
+    // font-weight: 700;
+    /* hide the text on small devices */
+    display: none;
+  }
+  .cd-primary-nav-trigger .cd-menu-icon {
+    /* this span is the central line of the menu icon */
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 25px;
+    height: 4px;
+    background-color: rgb(0, 0, 0);
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+    /* these are the upper and lower lines in the menu icon */
+  }
+  .cd-primary-nav-trigger .cd-menu-icon::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    right: 0;
+    -webkit-transition: -webkit-transform .3s, top .3s, background-color 0s;
+    -moz-transition: -moz-transform .3s, top .3s, background-color 0s;
+    transition: transform .3s, top .3s, background-color 0s;
+  } 
+  .cd-primary-nav-trigger .cd-menu-icon:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+    right: 0;
+    -webkit-transition: -webkit-transform .3s, top .3s, background-color 0s;
+    -moz-transition: -moz-transform .3s, top .3s, background-color 0s;
+    transition: transform .3s, top .3s, background-color 0s;
+  }
+  .cd-primary-nav-trigger .cd-menu-icon::before {
+    top: -8px;
+  }
+  .cd-primary-nav-trigger .cd-menu-icon::after {
+    top: 8px;
+  }
+  .cd-primary-nav-trigger .cd-menu-icon.is-clicked {
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 1001;
+  }
+  .cd-primary-nav-trigger .cd-menu-icon.is-clicked::before, .cd-primary-nav-trigger .cd-menu-icon.is-clicked::after {
+    background-color: rgb(17, 17, 17);
+  }
+  .cd-primary-nav-trigger .cd-menu-icon.is-clicked::before {
+    top: 0;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+  .cd-primary-nav-trigger .cd-menu-icon.is-clicked::after {
+    top: 0;
+    -webkit-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    -o-transform: rotate(225deg);
+    transform: rotate(225deg);
+  }
+  @media only screen and (min-width: 768px) {
+    .cd-primary-nav-trigger {
+      width: 100px;
+      padding-left: 1em;
+      background-color: transparent;
+      height: 30px;
+      line-height: 30px;
+      right: 2.2em;
+      top: 50%;
+      bottom: auto;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+    .cd-primary-nav-trigger .cd-menu-text {
+      display: inline-block;
+    }
+    .cd-primary-nav-trigger .cd-menu-icon {
+      left: auto;
+      right: 1em;
+      -webkit-transform: translateX(0) translateY(-50%);
+      -moz-transform: translateX(0) translateY(-50%);
+      -ms-transform: translateX(0) translateY(-50%);
+      -o-transform: translateX(0) translateY(-50%);
+      transform: translateX(0) translateY(-50%);
+    }
+  }
+  
+  .cd-primary-nav {
+    /* by default it's hidden - on top of the viewport */
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    z-index: 1000;
+    text-align: center;
+    padding: 50px 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: auto;
+    /* this fixes the buggy scrolling on webkit browsers - mobile devices only - when overflow property is applied */
+    -webkit-overflow-scrolling: touch;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+  }
+  .cd-primary-nav li {
+    font-size: 22px;
+    font-size: 1.375rem;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: .2em 0;
+    text-transform: capitalize;
+  }
+  .cd-primary-nav a {
+    display: inline-block;
+    border-radius: 0.1em;
+    -webkit-transition: background 0.2s;
+    -moz-transition: background 0.2s;
+    transition: background 0.2s;
+  }
+  .no-touch .cd-primary-nav a:hover {
+    background-color: #e36767;
+  }
+  .cd-primary-nav .cd-label {
+    color: #06446e;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    font-size: 0.875rem;
+    margin: 2.4em 0 .8em;
+  }
+  .cd-primary-nav .cd-social {
+    display: inline-block;
+    margin: 0 .4em;
+  }
+  .cd-primary-nav .cd-social a {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTc2cHgiIGhlaWdodD0iNDRweCIgdmlld0JveD0iMCAwIDE3NiA0NCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTc2IDQ0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRkZGRkZGO30NCgkuc3Qxe2ZpbGw6I0ZGRkZGRjt9DQo8L3N0eWxlPg0KPHBhdGggY2xhc3M9InN0MCIgZD0iTTE5LDIzdjEwaDQuNlYyM2gzLjNsMC44LTRoLTRjMCwwLDAtMiwwLTNjMC0wLjQsMC4yLTEsMC45LTFjMSwwLDIuNCwwLDIuNCwwdi00YzAsMC0yLjIsMC00LjUsMA0KCWMtMiwwLTMuNSwxLjYtMy41LDMuOGMwLDIsMCw0LjIsMCw0LjJoLTN2NEgxOXoiLz4NCjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik03Mi43LDIyYzAsMy43LTMsNi43LTYuNyw2LjdjLTMuNywwLTYuNy0zLTYuNy02LjdjMC0wLjQsMC0wLjYsMC4xLTFINTV2OC42YzAsMS45LDEuNSwzLjQsMy40LDMuNGgxNS4xDQoJYzEuOSwwLDMuNC0xLjUsMy40LTMuNFYyMWgtNC41QzcyLjYsMjEuNCw3Mi43LDIxLjYsNzIuNywyMnogTTczLjYsMTFINTguNGMtMS45LDAtMy40LDEuNS0zLjQsMy40VjE4aDUuNmMxLjItMS43LDMuMi0yLjcsNS40LTIuNw0KCWMyLjIsMCw0LjIsMSw1LjQsMi43SDc3di0zLjZDNzcsMTIuNSw3NS41LDExLDczLjYsMTF6IE03NS4yLDE1LjJjMCwwLjMtMC4zLDAuNi0wLjYsMC42aC0xLjhjLTAuMywwLTAuNi0wLjMtMC42LTAuNnYtMS44DQoJYzAtMC4zLDAuMy0wLjYsMC42LTAuNmgxLjhjMC4zLDAsMC42LDAuMywwLjYsMC42VjE1LjJ6IE03MC4xLDIyYzAtMi4zLTEuOC00LjEtNC4xLTQuMWMtMi4zLDAtNC4xLDEuOC00LjEsNC4xczEuOCw0LjEsNC4xLDQuMQ0KCUM2OC4zLDI2LjEsNzAuMSwyNC4zLDcwLjEsMjJ6Ii8+DQo8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMTEwLDMzYy02LjEsMC0xMS00LjktMTEtMTFzNC45LTExLDExLTExYzYuMSwwLDExLDQuOSwxMSwxMVMxMTYuMSwzMywxMTAsMzN6IE0xMTkuMywyMy41DQoJYy0wLjMtMC4xLTIuOS0wLjktNS45LTAuNGMxLjIsMy40LDEuNyw2LjEsMS44LDYuN0MxMTcuNCwyOC40LDExOC45LDI2LjEsMTE5LjMsMjMuNXogTTExMy43LDMwLjdjLTAuMS0wLjgtMC43LTMuNy0yLTcuMQ0KCWMwLDAsMCwwLTAuMSwwYy01LjMsMS44LTcuMiw1LjUtNy40LDUuOWMxLjYsMS4yLDMuNiwyLDUuOCwyQzExMS4zLDMxLjQsMTEyLjUsMzEuMSwxMTMuNywzMC43eiBNMTAzLDI4LjNjMC4yLTAuNCwyLjgtNC42LDcuNi02LjINCgljMC4xLDAsMC4yLTAuMSwwLjQtMC4xYy0wLjItMC41LTAuNS0xLjEtMC44LTEuNmMtNC43LDEuNC05LjIsMS4zLTkuNywxLjNjMCwwLjEsMCwwLjIsMCwwLjNDMTAwLjYsMjQuNCwxMDEuNSwyNi42LDEwMywyOC4zeg0KCSBNMTAwLjgsMjAuMWMwLjQsMCw0LjMsMCw4LjctMS4xYy0xLjYtMi44LTMuMi01LjEtMy41LTUuNEMxMDMuNCwxNC44LDEwMS40LDE3LjIsMTAwLjgsMjAuMXogTTEwNy44LDEyLjljMC4zLDAuMywyLDIuNywzLjUsNS41DQoJYzMuMy0xLjMsNC44LTMuMiw0LjktMy40Yy0xLjctMS41LTMuOC0yLjQtNi4yLTIuNEMxMDkuMiwxMi42LDEwOC41LDEyLjcsMTA3LjgsMTIuOXogTTExNy4zLDE2LjFjLTAuMiwwLjMtMS44LDIuMy01LjIsMy43DQoJYzAuMiwwLjQsMC40LDAuOSwwLjYsMS40YzAuMSwwLjIsMC4xLDAuMywwLjIsMC41YzMuMS0wLjQsNi4yLDAuMiw2LjUsMC4zQzExOS40LDE5LjcsMTE4LjYsMTcuNywxMTcuMywxNi4xeiIvPg0KPHBhdGggY2xhc3M9InN0MSIgZD0iTTE2NSwxNS4yYy0wLjgsMC40LTEuNywwLjYtMi42LDAuN2MwLjktMC42LDEuNi0xLjQsMi0yLjVjLTAuOSwwLjUtMS44LDAuOS0yLjksMS4xYy0wLjgtMC45LTItMS40LTMuMy0xLjQNCgljLTIuNSwwLTQuNSwyLTQuNSw0LjVjMCwwLjQsMCwwLjcsMC4xLDFjLTMuOC0wLjItNy4xLTItOS4zLTQuN2MtMC40LDAuNy0wLjYsMS40LTAuNiwyLjNjMCwxLjYsMC44LDIuOSwyLDMuOA0KCWMtMC43LDAtMS40LTAuMi0yLTAuNmMwLDAsMCwwLDAsMC4xYzAsMi4yLDEuNiw0LDMuNiw0LjRjLTAuNCwwLjEtMC44LDAuMi0xLjIsMC4yYy0wLjMsMC0wLjYsMC0wLjgtMC4xYzAuNiwxLjgsMi4yLDMuMSw0LjIsMy4xDQoJYy0xLjUsMS4yLTMuNSwxLjktNS42LDEuOWMtMC40LDAtMC43LDAtMS4xLTAuMWMyLDEuMyw0LjQsMiw2LjksMmM4LjMsMCwxMi44LTYuOSwxMi44LTEyLjhjMC0wLjIsMC0wLjQsMC0wLjYNCglDMTYzLjYsMTYuOSwxNjQuNCwxNi4xLDE2NSwxNS4yeiIvPg0KPC9zdmc+DQo=");
+    background-repeat: no-repeat;
+    /* image replacement */
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+  }
+  .cd-primary-nav .cd-facebook a {
+    background-position: 0 0;
+  }
+  .cd-primary-nav .cd-instagram a {
+    background-position: -44px 0;
+  }
+  .cd-primary-nav .cd-dribbble a {
+    background-position: -88px 0;
+  }
+  .cd-primary-nav .cd-twitter a {
+    background-position: -132px 0;
+  }
+  .cd-primary-nav.is-visible {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+  @media only screen and (min-width: 768px) {
+    .cd-primary-nav {
+      padding: 80px 0;
+    }
+  }
+  @media only screen and (min-width: 1170px) {
+    .cd-primary-nav li {
+      font-size: 30px;
+      font-size: 1.875rem;
+    }
+    .cd-primary-nav .cd-label {
+      font-size: 16px;
+      font-size: 1rem;
+    }
+  }
+  
+  .cd-intro {
+    position: relative;
+    height: 100%;
+    background: url("https://raw.githubusercontent.com/mattdanielbrown/remote-assets-for-codepen/master/images/background.png") no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+      
+  }
+  .cd-intro h1 {
+    position: absolute;
+    width: 90%;
+    max-width: 1170px;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    color: white;
+    font-size: 20px;
+    font-size: 1.25rem;
+    font-weight: 400;
+    text-align: center;
+      
+      // text-shadow: 0 4px 3px #000, 0 4px 3px #000;
+      // text-shadow: 0 4px 3px #000;
+      text-shadow: 0 0 10px rgba(#fff, 0.75),0 0 30px rgba(#fff, 0.75), 0 4px 3px #000;
+      
+  }
+  @media only screen and (min-width: 768px) {
+    .cd-intro h1 {
+      font-size: 30px;
+      font-size: 1.875rem;
+    }
+  }
+  @media only screen and (min-width: 1170px) {
+    .cd-intro {
+      height: 700px;
+    }
+  }
+  
+  .cd-main-content {
+    position: relative;
+    z-index: 1;
+  }
+  .cd-main-content p {
+    line-height: 1.6;
+    margin: 2em 0;
+  }
+  @media only screen and (min-width: 1170px) {
+    .cd-main-content p {
+      font-size: 20px;
+      font-size: 1.25rem;
+    }
+  }
