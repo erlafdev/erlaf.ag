@@ -15,14 +15,19 @@
         </div>
     </div>|
 </section> --}}
-<header class="bg-white bg-cover md:py-40 py-28 md:px-20 flex items-center justify-center" style="background-image: url({{ asset('imgs/gradient.jpg') }}">
-    <div class="md:flex items-center justify-center">
+<header class="bg-white bg-cover md:py-28 py-28 md:px-20 " style="background-image: url({{ asset('') }}">
+    <div class="md:flex items-center">
         <div class="flex items-center justify-center px-6 w-full md:w-1/2">
-            <div class="max-w-7xl text-center">
+            <div class="max-w-xl text-center">
                 <h2 class="text-2xl font-normal gtfont color-dvrk md:text-5xl" data-sal="slide-up" data-sal-repeat data-sal-once style="--sal-duration: 0.5s; --sal-delay: 0.5s;"><b style="color: #0057FF">erlaf.ag</b>, graphiste et dévéloppeur web freelance à bamako.</h2>    
                 <div class="flex mt-6 items-center justify-center text-center">
                     <a href="{{ route('service') }}" class="px-12 py-4 block bg-bleu text-white text-xl font-semibold rounded">Mes Services</a>
                 </div>
+            </div>
+        </div>
+        <div class="flex items-center justify-center w-full md:w-1/2">
+            <div class="max-w-2xl">
+                <img src="{{ asset('imgs/ordinateur.png') }}" alt="" srcset="">
             </div>
         </div>
     </div>

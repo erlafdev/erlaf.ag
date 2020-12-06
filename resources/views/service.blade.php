@@ -1,10 +1,37 @@
 @extends('layout.layout')
 @section('title', 'Service Web | erlaf.ag')
 @section('content')
-<section class="h-auto pb-4 md:pb-0">
+
+<header class="flex justify-center items-center md:py-12 py-8 bg-cover service-bg">
+        <div class="md:py-10">
+            <h1 class="gtfont font-black text-6xl text-white">mes services</h1>
+        </div>
+</header>
+
+<section class="bg-white">
+    <div class="flex items-center">
+        <div class="w-1/2 bg-white text-LEFT md: px-20">
+            <h1 class="gtfont font-normal text-54p">Création de site web</h1>
+            <p class="md:mt-3 mt-2 md:text-3xl text-2xl gtfont font-light">
+                La création de site web est indispensable pour améliorer la visibilité de ses activités. 
+                Le développement de votre site web est réalisé avec soin et répond aux standards web du W3C.
+            </p>
+        </div>
+        <div class="flex items-center justify-center w-1/2 bg-cover bg-center md:py-44"  style="background-image: url({{ asset('imgs/codeimg.jpg') }}">
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+{{-- <section class=" pb-4 md:pb-0">
     <div class="flex items-center flex-wrap-reverse w-full h-full">
         <div class="md:w-1/2 w-full p-8">
-            <div class="md:px-32">
+            <div class="md:px-10">
                 <h1 class="gtfont font-normal text-54p">Développement de site web</h1>
                 <p class="md:mt-4 mt-3 md:text-3xl text-2xl gtfont font-light">
                     La création de site web est indispensable pour améliorer la visibilité de ses activités. 
@@ -12,13 +39,15 @@
                 </p>
             </div>
         </div>
-        <div class="md:w-1/2 w-full md:p-36 p-8 bg-jaune">
+        <div class="md:w-1/2 w-full md:p-10 p-8 bg-jaune">
             <div class="flex justify-center items-center">
                 <img class="w-auto md:h-96 h-64" src="{{ asset('imgs/responsive-screen.png') }}">
             </div>
         </div>
     </div>
-</section>
+</section> --}}
+
+
 <section class="h-auto pb-4 md:pb-0">
     <div class="flex items-center flex-wrap w-full h-full">
         <div class="md:w-1/2 w-full bg-bleu">
