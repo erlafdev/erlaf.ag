@@ -15,18 +15,18 @@
         </div>
     </div>|
 </section> --}}
-<header class="bg-white bg-cover md:py-28 py-28 md:px-20 " style="background-image: url({{ asset('') }}">
+<header class="bg-white bg-cover md:py-28 py-28 md:px-20 px-10" style="background-image: url({{ asset('') }}">
     <div class="md:flex items-center">
         <div class="flex items-center justify-center px-6 w-full md:w-1/2">
-            <div class="max-w-xl text-center">
-                <h2 class="text-2xl font-normal gtfont color-dvrk md:text-5xl" data-sal="slide-up" data-sal-repeat data-sal-once style="--sal-duration: 0.5s; --sal-delay: 0.5s;"><b style="color: #0057FF">erlaf.ag</b>, graphiste et dévéloppeur web freelance à bamako.</h2>    
-                <div class="flex mt-6 items-center justify-center text-center">
+            <div class="max-w-xl md:text-left text-center">
+                <h2 class="font-normal gtfont color-dvrk md:text-5xl text-4xl" data-sal="slide-up" data-sal-repeat data-sal-once style="--sal-duration: 0.5s; --sal-delay: 0.5s;"><b style="color: #0057FF">erlaf.ag</b>, graphiste et dévéloppeur web freelance à bamako.</h2>    
+                <div class="md:flex mt-6 items-center">
                     <a href="{{ route('service') }}" class="px-12 py-4 block bg-bleu text-white text-xl font-semibold rounded">Mes Services</a>
                 </div>
             </div>
         </div>
         <div class="flex items-center justify-center w-full md:w-1/2">
-            <div class="max-w-2xl">
+            <div class="max-w-3xl md:inline hidden">
                 <img src="{{ asset('imgs/ordinateur.png') }}" alt="" srcset="">
             </div>
         </div>
@@ -74,7 +74,7 @@
     </div>
 </section>
 
-<section class="h-auto pb-4 md:pb-0">
+{{-- <section class="h-auto pb-4 md:pb-0">
     <div class="flex items-center flex-wrap w-full h-full">
         <div class="md:w-1/2 w-full md:p-28 p-8 bg-orange">
             <div class="flex justify-center items-center">
@@ -88,7 +88,7 @@
             </P>
         </div>
     </div>
-</section>
+</section> --}}
 @endsection
 
 {{-- 
