@@ -53,7 +53,7 @@
     color: #0e1010;
 }
 .color-sombre{
-    color: #aaaaaa;
+    color: #818181;
 }
 .color-dvrk-hover:focus{
     color: #0057FF;
@@ -73,6 +73,9 @@
 .text-color-blue{
     color: #2B44FF
 }
+.bg-white-transparent{
+    background-color: #ffffffb4
+}
 .bg-hosting{
     background-color: #00af8a
 }
@@ -81,9 +84,6 @@
 }
 .bg-bleu{
     background-color: #0057FF
-}
-.bg-bleu:hover{
-    background-color: #0e4fd1
 }
 .service-bg{
     background-color: #00bb77;

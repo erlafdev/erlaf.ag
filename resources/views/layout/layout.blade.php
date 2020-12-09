@@ -67,7 +67,7 @@
                 <div class="hidden md:inline">
                     <div class="flex items-center md:mx-6 text-bas-ligne">
                         <a class="@if (Request::is('service')) {{ 'navbar-a-active' }} @endif my-1 color-black gtfont-500 md:mr-4 md:my-0 gtfont relative" style="font-size:16px" href="{{ route('service') }}">Service</a>
-                        <a class="@if (Request::is('design')) {{ 'navbar-a-active' }} @endif my-1 color-black gtfont-500 md:mr-4 md:my-0 gtfont relative" style="font-size:16px" href="#">Design</a>
+                        <a class="@if (Request::is('design')) {{ 'navbar-a-active' }} @endif my-1 color-black gtfont-500 md:mr-4 md:my-0 gtfont relative" style="font-size:16px" href="{{ route('design') }}">Design</a>
                         <a class="@if (Request::is('à-propos')) {{ 'navbar-a-active' }} @endif my-1 color-black gtfont-500 md:mr-4 md:my-0 gtfont relative" style="font-size:16px" href="#">À propos</a>
                         <a class="@if (Request::is('me-contacter')) {{ 'navbar-a-active' }} @endif my-1 color-black gtfont-500 md:my-0 gtfont relative" style="font-size:16px" href="#">Me contacter</a>
                     </div>
