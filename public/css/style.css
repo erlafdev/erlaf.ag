@@ -80,7 +80,7 @@
     background-color: #00af8a
 }
 .bg-f9{
-    background-color: #ede4ddce
+    background-color: #f9fafb
 }
 .bg-bleu{
     background-color: #0057FF
@@ -120,6 +120,9 @@
 }
 .text-54p{
     font-size: 36px;
+}
+.text-15{
+    font-size: 16px
 }
 .navbar-a-active::after{
     background-color: #191919!important;

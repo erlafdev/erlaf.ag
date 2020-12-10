@@ -5,7 +5,7 @@
 <header class="flex justify-center items-center md:py-12 py-8 bg-cover bg-pan-left">
         <div class="md:py-10 max-w-2xl">
             <div class="">
-                <h1 class="gtfont font-black text-6xl text-white tracking-in-contract-bck-bottom">mes services</h1>
+                <h1 class="gtfont font-black text-6xl text-white">mes services</h1>
             </div>
         </div>
 </header>
